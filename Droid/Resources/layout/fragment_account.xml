@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Profile"
+        android:id="@+id/btProfile"
+        style="@style/RightNextButton" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/privacy"
+        android:id="@+id/btPrivacy"
+        style="@style/RightNextButton" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Change Password"
+        android:id="@+id/btChangePass"
+        style="@style/RightNextButton" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Log out"
+        android:id="@+id/btLogout"
+        style="@style/RightNextButton" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/delete_my_account"
+        android:id="@+id/btDeleteAccount"
+        style="@style/RightNextButton" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+</LinearLayout>

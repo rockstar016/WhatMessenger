@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/small_margin">
+    <FrameLayout
+        android:id="@+id/imgIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <FFImageLoading.Views.ImageViewAsync
+            android:id="@+id/imgProfile"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:padding="@dimen/small_margin" />
+        <ImageView
+            android:id="@+id/imgCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/ic_check_circle_black_24dp"
+            android:tint="@color/colorPrimary" />
+    </FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtUserName"
+        android:text="Friend"
+        style="@style/primaryTextStyle"
+        android:layout_toRightOf="@id/imgIndicator"
+        android:layout_margin="@dimen/small_margin"
+        android:textColor="@color/colorBlack" />
+    <TextView
+        android:id="@+id/txtStatus"
+        style="@style/secondaryTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtUserName"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_toRightOf="@id/imgIndicator"
+        android:maxLines="1"
+        android:text="Hey there! I am using 9Owl" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayGapColor"
+        android:layout_alignLeft="@id/txtStatus"
+        android:layout_below="@id/txtStatus"
+        android:layout_marginTop="@dimen/nav_header_vertical_spacing" />
+</RelativeLayout>

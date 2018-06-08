@@ -1,0 +1,1 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/menuAdd" android:icon="@drawable/ic_add_white_18dp" android:orderInCategory="100" android:title="message" app:iconTint="@color/colorWhite" app:showAsAction="ifRoom" /></menu>

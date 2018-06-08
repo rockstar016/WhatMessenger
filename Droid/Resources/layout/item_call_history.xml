@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:appCompat="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_margin="2dp">
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/female_placeholder" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:background="@drawable/ic_background_transparent_gray"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_margin">
+        <ImageView
+            android:id="@+id/chkSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ic_check_circle_black_24dp"
+            android:tint="@color/colorPrimaryDark" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/btAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@null"
+            android:tint="@color/colorPrimaryDark"
+            appCompat:src="@drawable/ic_more_vert_white_18dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/ic_background_transparent_gray"
+        android:orientation="horizontal"
+        android:padding="@dimen/nav_header_vertical_spacing">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="John Doe"
+                style="@style/primaryTextStyle"
+                android:textColor="@color/colorWhite" />
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yesterday, 10:12 AM"
+                android:textColor="@color/colorWhite"
+                style="@style/secondaryTextStyle" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="35dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgCallIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="@dimen/nav_header_vertical_spacing"
+                android:src="@drawable/ic_call_made_white_18dp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

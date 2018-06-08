@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+    <TextView
+        android:id="@+id/txtProfilePhotoIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile Photo"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:padding="@dimen/fab_margin"
+        android:textColor="@color/colorPrimary" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/groupLang"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radioEveryOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/nav_header_vertical_spacing"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:text="EveryOne" />
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radioMyContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/nav_header_vertical_spacing"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:text="My Contacts" />
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radioNobody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/nav_header_vertical_spacing"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:text="Nobody" />
+    </RadioGroup>
+</LinearLayout>

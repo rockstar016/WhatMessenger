@@ -1,0 +1,1136 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D300CA7-A79D-41D2-857A-50646D920E2A}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WhatMessenger.Droid</RootNamespace>
+    <AssemblyName>WhatMessenger.Droid</AssemblyName>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidLinkSkip>--linkskip=alarm</AndroidLinkSkip>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;armeabi;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Refractored.Controls.CircleImageView">
+      <HintPath>..\packages\Refractored.Controls.CircleImageView.1.0.1\lib\MonoAndroid10\Refractored.Controls.CircleImageView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Square.Picasso">
+      <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmHelpers">
+      <HintPath>..\packages\Refractored.MvvmHelpers.1.3.0\lib\netstandard1.0\MvvmHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkIO">
+      <HintPath>..\packages\Square.OkIO.1.13.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp">
+      <HintPath>..\packages\Square.OkHttp.2.7.5.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.AVLoadingIndicatorViewBinding">
+      <HintPath>..\packages\Xamarin.Android.AVLoadingIndicatorView.2.1.3\lib\MonoAndroid403\Xamarin.Android.AVLoadingIndicatorViewBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="PhotoView">
+      <HintPath>..\packages\Xamarin.Android.PhotoView.2.1.3\lib\MonoAndroid\PhotoView.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.CustomTabs">
+      <HintPath>..\packages\Xamarin.Android.Support.CustomTabs.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.CustomTabs.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Exif">
+      <HintPath>..\packages\Xamarin.Android.Support.Exif.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Exif.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\packages\Xamarin.Android.Support.Transition.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.GridLayout">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.GridLayout.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.GridLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FilePicker.Abstractions">
+      <HintPath>..\packages\Xamarin.Plugin.FilePicker.1.2.1\lib\MonoAndroid10\Plugin.FilePicker.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FilePicker">
+      <HintPath>..\packages\Xamarin.Plugin.FilePicker.1.2.1\lib\MonoAndroid10\Plugin.FilePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.AudioRecorder">
+      <HintPath>..\packages\Plugin.AudioRecorder.0.8.0\lib\monoandroid71\Plugin.AudioRecorder.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Constraint.Layout.Solver">
+      <HintPath>..\packages\Xamarin.Android.Support.Constraint.Layout.Solver.1.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.Solver.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Constraint.Layout">
+      <HintPath>..\packages\Xamarin.Android.Support.Constraint.Layout.1.1.0\lib\MonoAndroid70\Xamarin.Android.Support.Constraint.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.8\lib\monoandroid71\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.3.2.1\lib\MonoAndroid10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.3.2.1\lib\MonoAndroid10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Java.Interop">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Java.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry.AccessControl">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\Microsoft.Win32.Registry.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceEvent">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.TraceEvent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.AuthenticationManager">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.AuthenticationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Cache">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.HttpListener">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Mail">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.ServicePoint">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.ServicePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Utilities">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.DispatchProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.Emit.ILGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.Emit.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ReaderWriter">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Resources.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Loader">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.DeriveBytes">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.DeriveBytes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encryption.Aes">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Encryption.Aes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encryption.ECDiffieHellman">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Encryption.ECDiffieHellman.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encryption.ECDsa">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Encryption.ECDsa.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encryption">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Hashing.Algorithms">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Hashing.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Hashing">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.OpenSsl">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.OpenSsl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.RSA">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.RSA.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.RandomNumberGenerator">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.RandomNumberGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess.ServiceController">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.AccessControl">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Xsl.Primitives">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\System.Xml.Xsl.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\Facades\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Core.Common">
+      <HintPath>..\packages\Xamarin.Android.Arch.Core.Common.26.1.0\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Runtime">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.26.1.0\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.Android.Arch.Core.Runtime">
+      <HintPath>..\packages\Xamarin.Android.Arch.Core.Runtime.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="Plugin.CurrentActivity">
+      <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.1\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Extensions">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Extensions.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Extensions">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Extensions.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Common">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainApplication.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Helpers\BaseRecycleViewAdapter.cs" />
+    <Compile Include="Helpers\RecyclerClickEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Bases\BaseActivity.cs" />
+    <Compile Include="BaseUI\TabWithBadge.cs" />
+    <Compile Include="MainFragments\ChatListFragment.cs" />
+    <Compile Include="MainFragments\GroupListFragment.cs" />
+    <Compile Include="MainFragments\ContactListFragment.cs" />
+    <Compile Include="MainFragments\Adapters\ChatListAdapter.cs" />
+    <Compile Include="MainFragments\FavoriteFragment.cs" />
+    <Compile Include="MainFragments\StatusFragment.cs" />
+    <Compile Include="MainFragments\AccountFragment.cs" />
+    <Compile Include="MainFragments\SettingsFragment.cs" />
+    <Compile Include="Bases\MainBaseFragment.cs" />
+    <Compile Include="MainFragments\Adapters\ContactListAdapter.cs" />
+    <Compile Include="MainFragments\Adapters\GroupListAdapter.cs" />
+    <Compile Include="Utils\DrawableShapUtils.cs" />
+    <Compile Include="MainFragments\Adapters\StatusAdapter.cs" />
+    <Compile Include="Utils\DialogUtils.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
+    <Compile Include="Utils\GooglePlayUtils.cs" />
+    <Compile Include="Utils\PreferenceUtils.cs" />
+    <Compile Include="Utils\StringCheckUtil.cs" />
+    <Compile Include="MainFragments\Adapters\FavoriteListAdapter.cs" />
+    <Compile Include="Bases\BaseViewHolder.cs" />
+    <Compile Include="Utils\AnimUtils.cs" />
+    <Compile Include="Utils\LocaleChangeUtils.cs" />
+    <Compile Include="AuthActivity\LoginActivity.cs" />
+    <Compile Include="AuthActivity\RegisterTerms_Fragment.cs" />
+    <Compile Include="Bases\RegisterBaseFragment.cs" />
+    <Compile Include="AuthActivity\RegisterEmail_Fragment.cs" />
+    <Compile Include="AuthActivity\RegisterProfile_Fragment.cs" />
+    <Compile Include="MainFragments\CallListFragment.cs" />
+    <Compile Include="MainFragments\Adapters\CallListAdapter.cs" />
+    <Compile Include="CallHistory\CallHistoryDetailActivity.cs" />
+    <Compile Include="CallHistory\CallHistoryAdapter.cs" />
+    <Compile Include="CallHistory\CallDialyHistoryView.cs" />
+    <Compile Include="AuthActivity\RegisterActvity.cs" />
+    <Compile Include="ContactDetail\ContactDetailViewActivity.cs" />
+    <Compile Include="ContactDetail\AddContactActivity.cs" />
+    <Compile Include="GroupDetail\AddGroupActivity.cs" />
+    <Compile Include="GroupDetail\ChooseContactFragment.cs" />
+    <Compile Include="GroupDetail\SetGroupNameFragment.cs" />
+    <Compile Include="GroupDetail\GroupBaseFragment.cs" />
+    <Compile Include="GroupDetail\Adapters\ChooseContactAdapter.cs" />
+    <Compile Include="GroupDetail\Adapters\SelectedContactAdapter.cs" />
+    <Compile Include="ChatDetailView\ChatDetailView.cs" />
+    <Compile Include="Utils\LoadingIndicator.cs" />
+    <Compile Include="AuthActivity\RegisterLang_Fragment.cs" />
+    <Compile Include="Engine\EngineService.cs" />
+    <Compile Include="Utils\PhoneIMEI.cs" />
+    <Compile Include="ContactDetail\Adapter\CandiateAdapter.cs" />
+    <Compile Include="ChatDetailView\AttachToolboxStatus.cs" />
+    <Compile Include="GroupDetail\Adapters\ParticipantsAdapter.cs" />
+    <Compile Include="ChatDetailView\GroupChatDetailView.cs" />
+    <Compile Include="Helpers\ScaleImageView.cs" />
+    <Compile Include="Account\MyProfileEditActivity.cs" />
+    <Compile Include="Account\ProfileSubmitActivity.cs" />
+    <Compile Include="Account\PasswordChangeActivity.cs" />
+    <Compile Include="Account\PrivacyActivity.cs" />
+    <Compile Include="Account\PrivacyBlockedContactActivity.cs" />
+    <Compile Include="Account\PrivacyAddBlockContactActivity.cs" />
+    <Compile Include="Status\ActivityStatusEdit.cs" />
+    <Compile Include="Account\Adapters\BlockedContactListAdapter.cs" />
+    <Compile Include="Account\Adapters\AddContactToBlockAdapter.cs" />
+    <Compile Include="Helpers\RecyclerContactEventArgs.cs" />
+    <Compile Include="ChatDetailView\PdfFullScreenViewActivity.cs" />
+    <Compile Include="Helpers\StringEventArgs.cs" />
+    <Compile Include="AuthActivity\ForgotPasswordActivity.cs" />
+    <Compile Include="AuthActivity\ForgotEmail_Fragment.cs" />
+    <Compile Include="AuthActivity\ForgotPassword_Fragment.cs" />
+    <Compile Include="Bases\ForgotPasswordBaseFragment.cs" />
+    <Compile Include="ChatDetailView\Adapters\ChatDetailAdapter.cs" />
+    <Compile Include="ChatDetailView\Adapters\GroupDetailAdapter.cs" />
+    <Compile Include="ChatDetailView\DetailViewers\ImageFullScreenViewActivity.cs" />
+    <Compile Include="ChatDetailView\ViewHolders\SendTextViewHolder.cs" />
+    <Compile Include="ChatDetailView\ViewHolders\GroupViewHolders.cs" />
+    <Compile Include="ChatDetailView\DetailViewers\PlayerActivity.cs" />
+    <Compile Include="ChatDetailView\Dialogs\RecordingIndicator.cs" />
+    <Compile Include="ChatDetailView\Dialogs\AudioPlayIndicator.cs" />
+    <Compile Include="ChatDetailView\ChatDetailViewUtils.cs" />
+    <Compile Include="GroupDetail\EditGroupActivity.cs" />
+    <Compile Include="GroupDetail\Adapters\GroupEditAdapter.cs" />
+    <Compile Include="GroupDetail\ActivityEditGroupName.cs" />
+    <Compile Include="GroupDetail\ActivityEditGroupMember.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\values\arrays.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\drawable\female_placeholder.jpg" />
+    <AndroidResource Include="Resources\drawable\ic_background_gradient_gray.xml" />
+    <AndroidResource Include="Resources\drawable\ic_background_transparent_gray.xml" />
+    <AndroidResource Include="Resources\drawable\ic_radius_notification_background.xml" />
+    <AndroidResource Include="Resources\drawable\male_placeholder.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_account_circle_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_add_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_call_made_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_call_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_contacts_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_forum_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_info_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_keyboard_arrow_right_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_more_vert_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_search_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_rate_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_account_circle_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_call_made_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_call_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_contacts_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_forum_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_info_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_keyboard_arrow_right_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_more_vert_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_search_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_rate_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_account_circle_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_call_made_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_call_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_contacts_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_forum_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_info_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_keyboard_arrow_right_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_more_vert_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_search_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_rate_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_account_circle_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_call_made_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_call_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_contacts_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_forum_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_keyboard_arrow_right_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_more_vert_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_search_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_rate_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_account_circle_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_call_made_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_call_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_contacts_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_forum_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_keyboard_arrow_right_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_more_vert_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_search_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_rate_black_18dp.png" />
+    <AndroidResource Include="Resources\layout\activity_main.xml" />
+    <AndroidResource Include="Resources\layout\app_bar_main.xml" />
+    <AndroidResource Include="Resources\layout\fragment_call.xml" />
+    <AndroidResource Include="Resources\layout\fragment_chat.xml" />
+    <AndroidResource Include="Resources\layout\fragment_contact.xml" />
+    <AndroidResource Include="Resources\layout\fragment_favorite.xml" />
+    <AndroidResource Include="Resources\layout\fragment_group.xml" />
+    <AndroidResource Include="Resources\layout\item_call_history.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_contact_history.xml" />
+    <AndroidResource Include="Resources\layout\item_favorite_chat.xml" />
+    <AndroidResource Include="Resources\layout\item_group_history.xml" />
+    <AndroidResource Include="Resources\layout\nav_header_main.xml" />
+    <AndroidResource Include="Resources\layout\tabs.xml" />
+    <AndroidResource Include="Resources\menu\activity_main_drawer.xml" />
+    <AndroidResource Include="Resources\layout\tab_with_badge.xml" />
+    <AndroidResource Include="Resources\layout\fragment_status.xml" />
+    <AndroidResource Include="Resources\drawable\ic_circle_green.xml" />
+    <AndroidResource Include="Resources\layout\fragment_account.xml" />
+    <AndroidResource Include="Resources\layout\fragment_setting.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_home_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_home_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_home_black_24dp.png" />
+    <AndroidResource Include="Resources\menu\main.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_more_horiz_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_more_horiz_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_more_horiz_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_more_horiz_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_more_horiz_black_24dp.png" />
+    <AndroidResource Include="Resources\layout\custom_status_label.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_mode_edit_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_mode_edit_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_mode_edit_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_mode_edit_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_mode_edit_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_camera_enhance_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_camera_enhance_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_camera_enhance_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_camera_enhance_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_home_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_camera_enhance_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_home_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_stars_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_stars_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_stars_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_stars_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_stars_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_check_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_check_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_check_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_check_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_check_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_not_interested_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_thumb_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_not_interested_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_thumb_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_not_interested_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_thumb_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_not_interested_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_thumb_down_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_not_interested_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_thumb_down_black_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_profile.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_lock_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_mail_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_lock_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_mail_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_lock_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_mail_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_lock_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_mail_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_lock_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_mail_outline_black_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_register.xml" />
+    <AndroidResource Include="Resources\layout\fragment_register_email.xml" />
+    <AndroidResource Include="Resources\layout\fragment_register_privacy.xml" />
+    <AndroidResource Include="Resources\layout\fragment_register_profile.xml" />
+    <AndroidResource Include="Resources\layout\activity_login.xml" />
+    <AndroidResource Include="Resources\layout\fragment_change_lang.xml" />
+    <AndroidResource Include="Resources\layout\activity_call_info.xml" />
+    <AndroidResource Include="Resources\layout\item_call_detail_info.xml" />
+    <AndroidResource Include="Resources\layout\item_call_history_item_view.xml" />
+    <AndroidResource Include="Resources\menu\menu_call_detail.xml" />
+    <AndroidResource Include="Resources\menu\menu_scrolling.xml" />
+    <AndroidResource Include="Resources\layout\activity_add_contact.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_videocam_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_videocam_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_videocam_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_videocam_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_videocam_white_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_add_group.xml" />
+    <AndroidResource Include="Resources\layout\fragment_group_selectcontact.xml" />
+    <AndroidResource Include="Resources\layout\fragment_group_setname.xml" />
+    <AndroidResource Include="Resources\layout\item_group_additem.xml" />
+    <AndroidResource Include="Resources\layout\item_group_choosed_contact.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_back_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_forward_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_cancel_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_back_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_forward_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_cancel_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_back_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_forward_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_cancel_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_back_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_forward_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_cancel_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_back_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_forward_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_cancel_white_24dp.png" />
+    <AndroidResource Include="Resources\menu\menu_search.xml" />
+    <AndroidResource Include="Resources\layout\activity_chat.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_img_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_img_send.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_text_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_text_send.xml" />
+    <AndroidResource Include="Resources\drawable\background.png" />
+    <AndroidResource Include="Resources\drawable\ic_chat_reply.xml" />
+    <AndroidResource Include="Resources\drawable\ic_chat_send.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_attach_file_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_done_all_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_mic_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_send_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_attach_file_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_done_all_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_mic_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_send_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_attach_file_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_done_all_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_mic_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_send_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_attach_file_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_done_all_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_mic_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_send_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_attach_file_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_done_all_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_mic_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_send_white_24dp.png" />
+    <AndroidResource Include="Resources\menu\menu_chat.xml" />
+    <AndroidResource Include="Resources\drawable\ic_background_white.xml" />
+    <AndroidResource Include="Resources\drawable\background_button_attach.xml" />
+    <AndroidResource Include="Resources\drawable\background_button_mic.xml" />
+    <AndroidResource Include="Resources\drawable\background_button_send.xml" />
+    <AndroidResource Include="Resources\layout\loading_spinner_dialog.xml" />
+    <AndroidResource Include="Resources\layout\fragment_register_langsetting.xml" />
+    <AndroidResource Include="Resources\layout\item_contact_candidate.xml" />
+    <AndroidResource Include="Resources\xml\file_path.xml" />
+    <AndroidResource Include="Resources\drawable\camera_snapshot.png" />
+    <AndroidResource Include="Resources\drawable\ic_circle_white_green.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_audiotrack_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_camera_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_description_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_audiotrack_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_camera_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_description_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_audiotrack_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_camera_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_description_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_audiotrack_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_camera_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_description_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_audiotrack_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_camera_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_description_white_24dp.png" />
+    <AndroidResource Include="Resources\layout\fragment_attach_toolbox.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_insert_photo_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_video_library_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_insert_photo_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_video_library_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_insert_photo_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_video_library_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_insert_photo_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_video_library_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\placeholder_img_thumb.png" />
+    <AndroidResource Include="Resources\layout\item_group_history_img_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_group_history_text_receive.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_full_image.xml" />
+    <AndroidResource Include="Resources\layout\activity_my_profile.xml" />
+    <AndroidResource Include="Resources\layout\activity_profile_edit.xml" />
+    <AndroidResource Include="Resources\layout\activity_password_change.xml" />
+    <AndroidResource Include="Resources\layout\activity_privacy.xml" />
+    <AndroidResource Include="Resources\layout\fragment_privacy_profile_photo.xml" />
+    <AndroidResource Include="Resources\layout\fragment_privacy_status_share.xml" />
+    <AndroidResource Include="Resources\layout\activity_privacy_blocked_contact.xml" />
+    <AndroidResource Include="Resources\menu\menu_add_block.xml" />
+    <AndroidResource Include="Resources\layout\activity_add_contact_block.xml" />
+    <AndroidResource Include="Resources\drawable\background_1.jpg" />
+    <AndroidResource Include="Resources\layout\fragment_setting_chat_background.xml" />
+    <AndroidResource Include="Resources\layout\item_status_kind_viewholder.xml" />
+    <AndroidResource Include="Resources\layout\sound_recording_dialog.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_favorite_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_favorite_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_favorite_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_favorite_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_favorite_white_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_edit_status.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_folder_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_folder_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_folder_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_folder_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_folder_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\pdflogo.png" />
+    <AndroidResource Include="Resources\layout\item_chat_history_pdf_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_pdf_send.xml" />
+    <AndroidResource Include="Resources\layout\activity_pdf_viewer.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_video_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_video_send.xml" />
+    <AndroidResource Include="Resources\layout\activity_video_player.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\layout\fragment_forgotpassword_email.xml" />
+    <AndroidResource Include="Resources\layout\fragment_forgotpassword_newpassl.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_voice_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_chat_history_voice_send.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_volume_up_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_volume_up_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_volume_up_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_volume_up_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_volume_up_white_24dp.png" />
+    <AndroidResource Include="Resources\layout\sound_play_dialog.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_pause_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_pause_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_pause_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_pause_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_pause_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_play_arrow_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_play_arrow_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_play_arrow_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_play_arrow_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_play_arrow_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_replay_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_replay_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_replay_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_replay_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_replay_black_24dp.png" />
+    <AndroidResource Include="Resources\layout\item_group_history_pdf_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_group_history_video_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_group_history_voice_receive.xml" />
+    <AndroidResource Include="Resources\layout\item_group_member_edit.xml" />
+    <AndroidResource Include="Resources\layout\activity_edit_group.xml" />
+    <AndroidResource Include="Resources\layout\activity_edit_groupname.xml" />
+    <AndroidResource Include="Resources\layout\activity_edit_group_contact.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="BaseUI\" />
+    <Folder Include="Bases\" />
+    <Folder Include="Resources\values-v19\" />
+    <Folder Include="MainFragments\" />
+    <Folder Include="MainFragments\Adapters\" />
+    <Folder Include="Utils\" />
+    <Folder Include="AuthActivity\" />
+    <Folder Include="CallHistory\" />
+    <Folder Include="ContactDetail\" />
+    <Folder Include="GroupDetail\" />
+    <Folder Include="GroupDetail\Adapters\" />
+    <Folder Include="ChatDetailView\" />
+    <Folder Include="Engine\" />
+    <Folder Include="ContactDetail\Adapter\" />
+    <Folder Include="Resources\xml\" />
+    <Folder Include="Account\" />
+    <Folder Include="Status\" />
+    <Folder Include="Account\Adapters\" />
+    <Folder Include="ChatDetailView\Adapters\" />
+    <Folder Include="ChatDetailView\DetailViewers\" />
+    <Folder Include="ChatDetailView\ViewHolders\" />
+    <Folder Include="ChatDetailView\Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WhatMessenger.ViewModel\WhatMessenger.ViewModel.csproj">
+      <Project>{DA153C9B-16D0-46AE-A92F-4F81A3B2D2FD}</Project>
+      <Name>WhatMessenger.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\WhatMessengerStringResource\WhatMessengerStringResource.projitems" Label="Shared" Condition="Exists('..\WhatMessengerStringResource\WhatMessengerStringResource.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.CustomTabs.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.CustomTabs.targets" Condition="Exists('..\packages\Xamarin.Android.Support.CustomTabs.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.CustomTabs.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Exif.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Exif.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Transition.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.CardView.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.CardView.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.GridLayout.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.GridLayout.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.GridLayout.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.GridLayout.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Design.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Extensions.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Extensions.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Extensions.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Extensions.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+</Project>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginRight="@dimen/small_margin"
+        android:id="@+id/message_root_layout"
+        android:layout_gravity="right"
+        android:background="@drawable/ic_chat_send"
+        android:padding="@dimen/small_margin">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtContent"
+            android:textColor="#000"
+            android:minWidth="160dp"
+            android:maxWidth="250dp"
+            android:text="hi"
+            android:padding="@dimen/small_margin" />
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:id="@+id/srcStatus"
+            android:tint="@color/secondaryTextColor"
+            android:src="@drawable/ic_done_all_black_24dp"
+            android:layout_below="@id/txtContent"
+            android:layout_alignRight="@id/txtContent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTimeStamp"
+            android:textColor="@color/secondaryTextColor"
+            android:text="2018-12-02 08:02"
+            android:textSize="10sp"
+            android:minWidth="100dp"
+            android:layout_toLeftOf="@id/srcStatus"
+            android:layout_below="@id/txtContent"
+            android:padding="@dimen/small_margin" />
+    </RelativeLayout>
+</FrameLayout>

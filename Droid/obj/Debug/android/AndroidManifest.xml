@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.rock.WhatMessenger">
+  <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="27" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <application android:theme="@style/AppTheme.NoActionBar" android:allowBackup="true" android:label="@string/app_name" android:name="md5fe0ddbd0ddc234b3aee3ce162e03e690.MainApplication" android:debuggable="true">
+    <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.rock.WhatMessenger.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_path"></meta-data>
+    </provider>
+    <activity android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" android:name="md5fe0ddbd0ddc234b3aee3ce162e03e690.MainActivity" />
+    <activity android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" android:name="md5fe0ddbd0ddc234b3aee3ce162e03e690.SplashActivity" />
+    <activity android:label="ActivityStatusEdit" android:name="md557503eebb4007a107f37d711767e936c.ActivityStatusEdit" />
+    <activity android:label="" android:name="md584a09722ca72aca0f2f3df5fda2720c7.MyProfileEditActivity" />
+    <activity android:label="ProfileSubmitActivity" android:name="md584a09722ca72aca0f2f3df5fda2720c7.ProfileSubmitActivity" />
+    <activity android:label="PasswordChangeActivity" android:name="md584a09722ca72aca0f2f3df5fda2720c7.PasswordChangeActivity" />
+    <activity android:label="PrivacyActivity" android:name="md584a09722ca72aca0f2f3df5fda2720c7.PrivacyActivity" />
+    <activity android:label="PrivacyBlockedContactActivity" android:name="md584a09722ca72aca0f2f3df5fda2720c7.PrivacyBlockedContactActivity" />
+    <activity android:label="PrivacyAddBlockContactActivity" android:name="md584a09722ca72aca0f2f3df5fda2720c7.PrivacyAddBlockContactActivity" />
+    <service android:exported="true" android:label="EngineService" android:name="md53db462602cc3381ed1f634525d6d23af.EngineService">
+      <intent-filter>
+        <action android:name="com.rock.WhatMessenger.EngineService" />
+      </intent-filter>
+    </service>
+    <activity android:label="ChatDetailView" android:windowSoftInputMode="stateHidden|adjustUnspecified" android:name="md58708c25fbd4b8b28be9e0f4f8ee7e157.ChatDetailView" />
+    <activity android:label="GroupChatDetailView" android:windowSoftInputMode="stateHidden|adjustUnspecified" android:name="md58708c25fbd4b8b28be9e0f4f8ee7e157.GroupChatDetailView" />
+    <activity android:label="ImageFullScreenViewActivity" android:name="md58708c25fbd4b8b28be9e0f4f8ee7e157.PdfFullScreenViewActivity" />
+    <activity android:label="ImageFullScreenViewActivity" android:name="md58708c25fbd4b8b28be9e0f4f8ee7e157.ImageFullScreenViewActivity" />
+    <activity android:label="ImageFullScreenViewActivity" android:name="md58708c25fbd4b8b28be9e0f4f8ee7e157.PlayerActivity" />
+    <activity android:label="" android:name="md555675117944dde9bebb457aa1d3104e5.AddGroupActivity" />
+    <activity android:label="" android:name="md555675117944dde9bebb457aa1d3104e5.EditGroupActivity" />
+    <activity android:label="" android:name="md555675117944dde9bebb457aa1d3104e5.ActivityEditGroupName" />
+    <activity android:label="" android:name="md555675117944dde9bebb457aa1d3104e5.ActivityEditGroupMember" />
+    <activity android:label="" android:theme="@style/AppTheme.NoActionBar" android:name="md58ef2fc4e3333436f615c814323a286af.ContactDetailViewActivity" />
+    <activity android:label="" android:theme="@style/AppTheme.NoActionBar" android:name="md58ef2fc4e3333436f615c814323a286af.AddContactActivity" />
+    <activity android:label="" android:name="md5bcec533836136e85ccd04e788d90e688.CallHistoryDetailActivity" />
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:launchMode="singleInstance" android:roundIcon="@mipmap/ic_launcher_round" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:name="md5cd459dd57534366270e02204a01d64f0.LoginActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="" android:theme="@style/AppTheme.NoActionBar" android:name="md5cd459dd57534366270e02204a01d64f0.RegisterActvity" />
+    <activity android:label="" android:name="md5cd459dd57534366270e02204a01d64f0.ForgotPasswordActivity" />
+    <activity android:theme="@style/AppTheme.NoActionBar" android:name="md5b38a6ffcb6edddc63f84bd53d62dbdc7.BaseActivity" />
+    <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md59628c2715c1bb8febcc7ae8402df0582.ConnectivityChangeBroadcastReceiver" />
+    <activity android:configChanges="orientation|screenSize" android:name="md54fe4aef201482be7d95d72c0c9bf0b33.FilePickerActivity" />
+    <activity android:configChanges="orientation|screenSize" android:name="md54cd65ac53ae710bff80022afc423e0f3.MediaPickerActivity" />
+    <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.rock.WhatMessenger.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.rock.WhatMessenger" />
+      </intent-filter>
+    </receiver>
+    <provider android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer" android:authorities="com.rock.WhatMessenger.lifecycle-trojan" android:exported="false" android:multiprocess="true" />
+  </application>
+</manifest>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btChangeLang"
+        style="@style/RightNextButton"
+        android:text="Change Language" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btChatWallPaper"
+        style="@style/RightNextButton"
+        android:text="@string/chat_wallpaper" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+<!-- <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btNotification"
+        style="@style/RightNextButton"
+        android:text="@string/notification" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/btClearAll"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:text="@string/clear_all_chats"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="false"
+        android:textAlignment="gravity"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/default_margin"
+        android:background="@null" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tiny_margin"
+        android:background="@color/grayGapColor" />
+</LinearLayout>

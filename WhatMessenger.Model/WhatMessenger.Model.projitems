@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{DD491A42-4289-47F2-ADB9-569044ED720E}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>WhatMessenger.Model</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CallListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ContactModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FavorItemModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StatusModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Home\CallHistoryDetailItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\UserStatusType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChoosableContact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Auth\LoginRequestModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\ServerURL.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ContactAddRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\GetContactRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\GetProfileRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ProfileUpdateRequestModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\RegisterRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ResetPasswordRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AddContactResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ChangeEmailResponseAsJson.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\CommonResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\GetContactResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ProfileResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\UserDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\ContactDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\GlobalConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ContactCandidateRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\ChatEntryDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\OpenOrCreateChatEntryRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\GetPrivateChatEntryRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\ChatHistoryItemDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AddPrivateChatHistoryItemRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chat\TypingStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\OnlineStatusRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\GroupDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\GroupAddRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\GetGroupChatEntryRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AddGroupChatHistoryItemRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseModel\GroupHistoryItemDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AskPasswordChangeRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoadChatHistoryCollectionRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Auth\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Home\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Chat\" />
+    <Folder Include="$(MSBuildThisFileDirectory)BaseModel\" />
+  </ItemGroup>
+</Project>

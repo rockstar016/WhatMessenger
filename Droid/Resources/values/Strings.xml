@@ -1,0 +1,36 @@
+﻿<resources>
+    <string name="app_name">NightOwl</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="call">Call</string>
+    <string name="chats">Chats</string>
+    <string name="group">Group</string>
+    <string name="contact">Contact</string>
+    <string name="favorites">Favorites</string>
+    <string name="status">Status</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
+    <string name="feedback">Tell a Friend</string>
+    <string name="account">Account</string>
+    <string name="favorite_back_description">Tap and hold on any message to start it, so you can easily find it later</string>
+    <string name="no_favorite_message">No favorite message</string>
+    <string name="share_info_privacy_description">
+        <![CDATA[<p>Share my WhatsApp account information with Facebook to improve my facebook ads. <a href="https://google.com">Learn More</a><p>]]>
+    </string>
+    <string name="privacy">Privacy</string>
+    <string name="security">Security</string>
+    <string name="change_number">Change Number</string>
+    <string name="delete_my_account">Delete my account</string>
+    <string name="share_my_account_info">Share my account Info</string>
+    <string name="chat_wallpaper">Chat Wallpaper</string>
+    <string name="notification">Notification</string>
+    <string name="clear_all_chats">Clear All Chats</string>
+    <string name="home">home</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- 2017-11-27 -->
+
+</resources>

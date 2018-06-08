@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{8BFCB906-FD7B-42EB-B860-50D3C29ACFC1}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>WhatMessengerStringResource</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)LanguageInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ChineseStringResouce.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnglishStringResource.cs" />
+  </ItemGroup>
+</Project>

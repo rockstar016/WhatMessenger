@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{1D300CA7-A79D-41D2-857A-50646D920E2A}|Default">
+  <MonoDevelop.Ide.ItemProperties.WhatMessenger.Droid PreferredExecutionTarget="Android.Nexus_5X_API_26" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WhatMessenger.Model/Constants/ServerURL.cs">
+    <Files>
+      <File FileName="WhatMessenger.Model/Constants/ServerURL.cs" Line="7" Column="48" />
+      <File FileName="WhatMessengerStringResource/EnglishStringResource.cs" Line="62" Column="4" />
+      <File FileName="Droid/MainApplication.cs" Line="2" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WhatMessenger" expanded="True">
+            <Node name="WhatMessenger.Model" selected="True" />
+            <Node name="WhatMessengerStringResource" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>iOS/WhatMessenger.iOS.csproj</String>
+  </DisabledProjects>
+</Properties>

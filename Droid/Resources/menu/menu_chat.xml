@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuCall"
+        android:icon="@drawable/ic_call_white_18dp"
+        android:orderInCategory="100"
+        android:title="call"
+        app:iconTint="@color/colorWhite"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menuVideo"
+        android:icon="@drawable/ic_videocam_white_24dp"
+        android:orderInCategory="100"
+        android:title="videocall"
+        app:iconTint="@color/colorWhite"
+        app:showAsAction="always" />
+
+
+</menu>

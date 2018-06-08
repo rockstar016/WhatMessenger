@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/default_margin"
+        android:text="Welcome to messenger"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_large_size"
+        android:textStyle="bold" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/small_margin">
+        <TextView
+            android:id="@+id/txtHtmlLink"
+            style="@style/primaryCenterAlignedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap &quot;Agree and continue&quot;  to accept Privacy Terms and Privacy" />
+        <Button
+            android:id="@+id/btAgreeTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:background="@color/colorPrimary"
+            android:text="Agree and Continue"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+</LinearLayout>

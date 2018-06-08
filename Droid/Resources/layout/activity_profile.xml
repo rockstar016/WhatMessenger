@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayGapColor">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_collapse_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nav_collapse_height"
+                android:minHeight="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:background="@color/colorPrimary"
+                app:title="" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="@dimen/default_component_size">
+                <TextView
+                    android:id="@+id/txtTitleStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginRight="@dimen/default_component_size"
+                    android:padding="@dimen/small_margin" />
+                <TextView
+                    android:id="@+id/txtStatusLastUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01 May"
+                    android:layout_toRightOf="@id/txtTitleStatus"
+                    style="@style/secondaryTextStyle"
+                    android:padding="@dimen/small_margin" />
+                <TextView
+                    android:id="@+id/txtStatusContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtTitleStatus"
+                    style="@style/primaryTextStyle"
+                    android:padding="@dimen/small_margin"
+                    android:text="sleep till you're hungry" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grayGapColor" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="@dimen/small_margin"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_account_circle_black_18dp"
+                    android:tint="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/txtUserName"
+                    style="@style/primaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imgUser"
+                    android:padding="@dimen/small_margin"
+                    android:text="Lambda Lauren" />
+                <TextView
+                    android:id="@+id/txtUserNameIndicator"
+                    style="@style/secondaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/txtUserName"
+                    android:layout_below="@id/txtUserName"
+                    android:padding="@dimen/small_margin"
+                    android:text="Username" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grayGapColor" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+                <ImageView
+                    android:id="@+id/imgPhone"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/small_margin"
+                    android:src="@drawable/ic_call_white_18dp"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/txtUserPhone"
+                    style="@style/primaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imgPhone"
+                    android:padding="@dimen/small_margin"
+                    android:text="Lambda Lauren" />
+                <TextView
+                    android:id="@+id/txtUserPhoneIndicator"
+                    style="@style/secondaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/txtUserPhone"
+                    android:layout_below="@id/txtUserPhone"
+                    android:padding="@dimen/small_margin"
+                    android:text="User phone" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/btStartCall"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grayGapColor" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+                <ImageView
+                    android:id="@+id/imgEmail"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/small_margin"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_mail_outline_black_24dp"
+                    android:tint="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/txtUserEmail"
+                    style="@style/primaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imgEmail"
+                    android:padding="@dimen/small_margin"
+                    android:text="Lambda@Lauren.com" />
+                <TextView
+                    android:id="@+id/txtUserEmailIndicator"
+                    style="@style/secondaryTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/txtUserEmail"
+                    android:layout_below="@id/txtUserEmail"
+                    android:padding="@dimen/small_margin"
+                    android:text="User email" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btStartChat"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grayGapColor" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:padding="@dimen/small_margin">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btBlock"
+                    android:background="@null"
+                    android:text="Block"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:src="@drawable/ic_not_interested_black_24dp"
+                    android:tint="@color/colorAccent" />
+            </FrameLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grayGapColor" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/colorWhite"
+        app:fabSize="normal"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_star_rate_black_18dp" />
+</android.support.design.widget.CoordinatorLayout>
